@@ -36,7 +36,6 @@ c:\users\administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMa
 c:\users\administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\bin\System.Net.Http.Formatting.xml
 c:\users\administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\bin\System.Web.Http.xml
 c:\users\administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\bin\System.Web.Http.WebHost.xml
-c:\users\administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.csprojResolveAssemblyReference.cache
 c:\users\administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.dll
 c:\users\administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.pdb
 c:\users\administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\bin\AutoMapper.dll
@@ -48,3 +47,5 @@ C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMa
 C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\bin\EntityFramework.SqlServer.dll
 C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\bin\EntityFramework.xml
 C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\bin\EntityFramework.SqlServer.xml
+C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.Migrations.Init.resources
+C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.GenerateResource.Cache

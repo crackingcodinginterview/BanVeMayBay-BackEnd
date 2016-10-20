@@ -16,6 +16,10 @@ namespace BanVeMayBay.DataStores
         private DbContext _dataContext;
         private GenericRepository<Airport> _airports;
         private GenericRepository<Airroute> _airroutes;
+        public AirticketDataStore()
+        {
+            this._dataContext = new AirticketDataContext();
+        }
         public GenericRepository<Airport> Airports
         {
             get

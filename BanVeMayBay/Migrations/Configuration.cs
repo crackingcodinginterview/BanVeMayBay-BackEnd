@@ -1,6 +1,8 @@
 namespace BanVeMayBay.Migrations
 {
+    using Models;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -26,6 +28,10 @@ namespace BanVeMayBay.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            var airroute = new Airroute { Code = "GGG" };
+            var airport = new Airport { Code = "AAA", Name = "San Bay HCM", Airroutes = new List<Airroute> { airroute } };
+            context.Airport.Add(airport);
+            context.Airroute.Add(airroute);
         }
     }
 }
