@@ -7,13 +7,13 @@ namespace BanVeMayBay.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ChangeRouteModel : IMigrationMetadata
+    public sealed partial class Init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeRouteModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Init));
         
         string IMigrationMetadata.Id
         {
-            get { return "201610201403183_Change-Route-Model"; }
+            get { return "201610201709064_Init"; }
         }
         
         string IMigrationMetadata.Source

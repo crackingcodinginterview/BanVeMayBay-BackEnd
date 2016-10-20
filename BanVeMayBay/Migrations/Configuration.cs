@@ -11,7 +11,7 @@
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(BanVeMayBay.DataContexts.AirticketDataContext context)
@@ -29,14 +29,13 @@
             //    );
             //
 
-            
             var airport1 = new Airport { Code = "SGN", Name = "Sân bay quốc tế Tân Sơn Nhất" };
             var airport2 = new Airport { Code = "HAN", Name = "Sân bay quốc tế Nội Bài" };
             var airport3 = new Airport { Code = "PQC", Name = "Sân bay quốc tế Phú Quốc" };
             var airport4 = new Airport { Code = "DAD", Name = "Sân bay quốc tế Đà Nẵng" };
 
-            var airroute1 = new Airroute { Code = "AAAA", FromAirport = airport1, ToAirport = airport2 };
-            var airroute2 = new Airroute { Code = "BBBB", FromAirport = airport3, ToAirport = airport4 };
+            var airroute1 = new Airroute { Code = "AAAA", Airports = new List<Airport> { airport1, airport2 } };
+            var airroute2 = new Airroute { Code = "BBBB", Airports = new List<Airport> { airport3, airport4 } };
 
             airport1.Airroutes = new List<Airroute> { airroute1 };
             airport2.Airroutes = new List<Airroute> { airroute1 };

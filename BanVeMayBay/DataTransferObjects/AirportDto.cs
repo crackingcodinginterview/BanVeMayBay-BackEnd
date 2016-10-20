@@ -9,6 +9,5 @@ namespace BanVeMayBay.DataTransferObjects
     {
         public string Code { get; set; }
         public string Name { get; set; }
-        public IEnumerable<AirrouteDto> Airroutes { get; set; }
     }
 }

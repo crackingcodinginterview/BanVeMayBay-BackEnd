@@ -25,30 +25,33 @@ namespace BanVeMayBay.Migrations
                     {
                         Id = c.String(nullable: false, maxLength: 128),
                         Code = c.String(),
-                        FromAirportId = c.String(maxLength: 128),
-                        ToAirportId = c.String(maxLength: 128),
                         CreatedDate = c.DateTime(nullable: false),
                         UpdatedDate = c.DateTime(nullable: false),
-                        Airport_Id = c.String(maxLength: 128),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Airports", t => t.FromAirportId)
-                .ForeignKey("dbo.Airports", t => t.ToAirportId)
-                .ForeignKey("dbo.Airports", t => t.Airport_Id)
-                .Index(t => t.FromAirportId)
-                .Index(t => t.ToAirportId)
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.AirrouteAirports",
+                c => new
+                    {
+                        Airroute_Id = c.String(nullable: false, maxLength: 128),
+                        Airport_Id = c.String(nullable: false, maxLength: 128),
+                    })
+                .PrimaryKey(t => new { t.Airroute_Id, t.Airport_Id })
+                .ForeignKey("dbo.Airroutes", t => t.Airroute_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Airports", t => t.Airport_Id, cascadeDelete: true)
+                .Index(t => t.Airroute_Id)
                 .Index(t => t.Airport_Id);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Airroutes", "Airport_Id", "dbo.Airports");
-            DropForeignKey("dbo.Airroutes", "ToAirportId", "dbo.Airports");
-            DropForeignKey("dbo.Airroutes", "FromAirportId", "dbo.Airports");
-            DropIndex("dbo.Airroutes", new[] { "Airport_Id" });
-            DropIndex("dbo.Airroutes", new[] { "ToAirportId" });
-            DropIndex("dbo.Airroutes", new[] { "FromAirportId" });
+            DropForeignKey("dbo.AirrouteAirports", "Airport_Id", "dbo.Airports");
+            DropForeignKey("dbo.AirrouteAirports", "Airroute_Id", "dbo.Airroutes");
+            DropIndex("dbo.AirrouteAirports", new[] { "Airport_Id" });
+            DropIndex("dbo.AirrouteAirports", new[] { "Airroute_Id" });
+            DropTable("dbo.AirrouteAirports");
             DropTable("dbo.Airroutes");
             DropTable("dbo.Airports");
         }

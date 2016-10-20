@@ -147,21 +147,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610201321432_Init.cs" />
-    <Compile Include="Migrations\201610201321432_Init.Designer.cs">
-      <DependentUpon>201610201321432_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610201403183_Change-Route-Model.cs" />
-    <Compile Include="Migrations\201610201403183_Change-Route-Model.Designer.cs">
-      <DependentUpon>201610201403183_Change-Route-Model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610201417554_Add-Key-Identity.cs" />
-    <Compile Include="Migrations\201610201417554_Add-Key-Identity.Designer.cs">
-      <DependentUpon>201610201417554_Add-Key-Identity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610201447581_test.cs" />
-    <Compile Include="Migrations\201610201447581_test.Designer.cs">
-      <DependentUpon>201610201447581_test.cs</DependentUpon>
+    <Compile Include="Migrations\201610201709064_Init.cs" />
+    <Compile Include="Migrations\201610201709064_Init.Designer.cs">
+      <DependentUpon>201610201709064_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Airport.cs" />
@@ -186,17 +174,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610201321432_Init.resx">
-      <DependentUpon>201610201321432_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610201403183_Change-Route-Model.resx">
-      <DependentUpon>201610201403183_Change-Route-Model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610201417554_Add-Key-Identity.resx">
-      <DependentUpon>201610201417554_Add-Key-Identity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610201447581_test.resx">
-      <DependentUpon>201610201447581_test.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610201709064_Init.resx">
+      <DependentUpon>201610201709064_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
