@@ -12,16 +12,15 @@ namespace BanVeMayBay.Controllers
 {
     public class AirportsController : ApiController
     {
-        private IUnitOfWork unit;
+        private IUnitOfWork _unit;
         public AirportsController()
         {
-            unit = new AirticketDataStore();
+            this._unit = new AirticketDataStore();
         }
         [HttpGet]
         public IHttpActionResult Get()
         {
-            var res = unit.Airports.GetAll()
-                .First().To<AirportDto>();
+            var res = this._unit.Airports.Get().First().To<AirportDto>();
             return Ok(res);
         }
     }

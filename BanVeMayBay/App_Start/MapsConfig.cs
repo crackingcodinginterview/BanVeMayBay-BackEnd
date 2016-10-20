@@ -12,11 +12,11 @@ namespace BanVeMayBay
     {
         public static void Register()
         {
-            //Mapper.CreateMap<Airport, AirportDto>()
-            //    .ForMember(d => d.Airroutes, s => s.MapFrom(d => d.Airroutes));
-            //Mapper.CreateMap<Airroute, AirrouteDto>()
-            //    .ForSourceMember(s => s.From, d => d.Ignore())
-            //    .ForSourceMember(s => s.To, s => s.Ignore());
+            Mapper.CreateMap<Airport, AirportDto>()
+                .ForMember(d => d.Airroutes, s => s.MapFrom(d => d.Airroutes));
+            Mapper.CreateMap<Airroute, AirrouteDto>()
+                .ForSourceMember(s => s.FromAirport, d => d.Ignore())
+                .ForSourceMember(s => s.ToAirport, d => d.Ignore());
         }
         public static T To<T>(this object source)
         {

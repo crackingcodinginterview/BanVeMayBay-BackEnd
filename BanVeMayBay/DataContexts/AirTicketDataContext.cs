@@ -9,7 +9,7 @@ namespace BanVeMayBay.DataContexts
 {
     public class AirticketDataContext : DbContext
     {
-        public AirticketDataContext()
+        public AirticketDataContext() : base("airticket")
         {
 
         }

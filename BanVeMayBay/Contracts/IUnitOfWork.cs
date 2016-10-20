@@ -1,4 +1,5 @@
 ﻿using BanVeMayBay.Models;
+using BanVeMayBay.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace BanVeMayBay.Contracts
     public interface IUnitOfWork
     {
         void Save();
-        IRepository<Airport> Airports { get; }
+        GenericRepository<Airport> Airports { get; }
+        GenericRepository<Airroute> Airroutes { get; }
     }
 }
