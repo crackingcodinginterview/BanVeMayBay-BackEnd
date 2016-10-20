@@ -12,6 +12,9 @@ namespace BanVeMayBay
     {
         public static void Register()
         {
+            Mapper.CreateMap<Base, BaseDto>()
+                .Include<Airport, AirportDto>()
+                .Include<Airroute, AirrouteDto>();
             Mapper.CreateMap<Airport, AirportDto>()
                 .ForMember(d => d.Airroutes, s => s.MapFrom(d => d.Airroutes));
             Mapper.CreateMap<Airroute, AirrouteDto>()

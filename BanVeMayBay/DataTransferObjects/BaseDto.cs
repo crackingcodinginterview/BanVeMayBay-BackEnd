@@ -5,10 +5,10 @@ using System.Web;
 
 namespace BanVeMayBay.DataTransferObjects
 {
-    public class AirportDto : BaseDto
+    public class BaseDto
     {
         public string Id { get; set; }
-        public string Name { get; set; }
-        public IEnumerable<AirrouteDto> Airroutes { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime UpdatedDate { get; set; }
     }
 }

@@ -143,6 +143,7 @@
     <Compile Include="DataStores\AirticketDataStore.cs" />
     <Compile Include="DataTransferObjects\AirportDto.cs" />
     <Compile Include="DataTransferObjects\AirrouteDto.cs" />
+    <Compile Include="DataTransferObjects\BaseDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
