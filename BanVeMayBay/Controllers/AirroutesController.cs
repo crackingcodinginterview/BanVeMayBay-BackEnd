@@ -10,22 +10,22 @@ using System.Web.Http;
 
 namespace BanVeMayBay.Controllers
 {
-    public class AirportsController : ApiController
+    public class AirroutesController : ApiController
     {
         private IUnitOfWork _unit;
-        public AirportsController()
+        public AirroutesController()
         {
             this._unit = new AirticketDataStore();
         }
         [HttpGet]
-        public IHttpActionResult GetAllAirport()
+        public IHttpActionResult GetAllAirroute()
         {
-            var res = this._unit.Airports.Get().To<AirportDto>();
+            var res = this._unit.Airports.Get().To<AirrouteDto>();
             return Ok(res);
         }
 
         [HttpGet]
-        public IHttpActionResult GetAirportById(string id)
+        public IHttpActionResult GetAirrouteById(string id)
         {
             var res = this._unit.Airports.GetById(id).To<AirportDto>();
             return Ok(res);
