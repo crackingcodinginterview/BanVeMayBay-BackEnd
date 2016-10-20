@@ -2,8 +2,8 @@
 {
     public class AirrouteDto : BaseDto
     {
-        public string Id { get; set; }
-        public string Fromid { get; set; }
-        public string Toid { get; set; }
+        public string Code { get; set; }
+        public string FromAirportId { get; set; }
+        public string ToAirportId { get; set; }
     }
 }

@@ -18,9 +18,16 @@ namespace BanVeMayBay.Controllers
             this._unit = new AirticketDataStore();
         }
         [HttpGet]
-        public IHttpActionResult Get()
+        public IHttpActionResult GetAllAirport()
         {
-            var res = this._unit.Airports.Get().First().To<AirportDto>();
+            var res = this._unit.Airports.Get();
+            return Ok(res);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetAirportById(string id)
+        {
+            var res = this._unit.Airports.GetById(id).To<AirportDto>();
             return Ok(res);
         }
     }

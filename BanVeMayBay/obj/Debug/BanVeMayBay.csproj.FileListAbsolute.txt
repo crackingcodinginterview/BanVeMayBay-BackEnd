@@ -49,3 +49,6 @@ C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMa
 C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\bin\EntityFramework.SqlServer.xml
 C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.Migrations.Init.resources
 C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.GenerateResource.Cache
+C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.Migrations.ChangeRouteModel.resources
+C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.Migrations.AddKeyIdentity.resources
+C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.Migrations.test.resources

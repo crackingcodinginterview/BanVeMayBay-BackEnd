@@ -18,8 +18,8 @@ namespace BanVeMayBay
             Mapper.CreateMap<Airport, AirportDto>()
                 .ForMember(d => d.Airroutes, s => s.MapFrom(d => d.Airroutes));
             Mapper.CreateMap<Airroute, AirrouteDto>()
-                .ForSourceMember(s => s.FromAirport, d => d.Ignore())
-                .ForSourceMember(s => s.ToAirport, d => d.Ignore());
+                .ForMember(d => d.FromAirportId, d => d.MapFrom(s => s.FromAirport.Id))
+                .ForMember(d => d.ToAirportId, d => d.MapFrom(s => s.ToAirport.Id));
         }
         public static T To<T>(this object source)
         {
