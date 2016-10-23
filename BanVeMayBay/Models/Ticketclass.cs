@@ -7,5 +7,7 @@ namespace BanVeMayBay.Models
 {
     public class Ticketclass
     {
+        public string Code { get; set; }
+        public string Name { get; set; }
     }
 }
