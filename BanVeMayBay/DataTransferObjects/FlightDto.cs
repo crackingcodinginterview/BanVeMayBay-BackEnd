@@ -5,7 +5,7 @@ using System.Web;
 
 namespace BanVeMayBay.DataTransferObjects
 {
-    public class FlightDto
+    public class FlightDto : BaseDto
     {
         public string Code { get; set; }
         public DateTime Time { get; set; }

@@ -15,8 +15,13 @@ namespace BanVeMayBay
             Mapper.CreateMap<Base, BaseDto>()
                 .ForSourceMember(s => s.CreatedDate, s => s.Ignore())
                 .ForSourceMember(s => s.UpdatedDate, s => s.Ignore())
-                .Include<Airport, AirportDto>();
-            Mapper.CreateMap<Airport, AirportDto>();
+                .Include<Airport, AirportDto>()
+                .Include<Ticketclass, TicketclassDto>()
+                .Include<Flight, FlightDto>();
+            Mapper.CreateMap<Airport, AirportDto>()
+                .ForSourceMember(s => s.Flights, s => s.Ignore());
+            Mapper.CreateMap<Ticketclass, TicketclassDto>()
+                .ForSourceMember(s => s.Reservationtickets, s => s.Ignore());
         }
         public static T To<T>(this object source)
         {
