@@ -14,6 +14,5 @@ namespace BanVeMayBay.DataContexts
 
         }
         public DbSet<Airport> Airport { get; set; }
-        public DbSet<Airroute> Airroute { get; set; }
     }
 }

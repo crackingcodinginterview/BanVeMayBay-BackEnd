@@ -5,9 +5,7 @@ using System.Web;
 
 namespace BanVeMayBay.Models
 {
-    public class Airport : Base
+    public class Reservationticket
     {
-        public string Code { get; set; }
-        public string Name { get; set; }
     }
 }

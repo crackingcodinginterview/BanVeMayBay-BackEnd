@@ -13,13 +13,10 @@ namespace BanVeMayBay
         public static void Register()
         {
             Mapper.CreateMap<Base, BaseDto>()
-                .Include<Airport, AirportDto>()
-                .Include<Airroute, AirrouteDto>();
-            Mapper.CreateMap<Airport, AirportDto>()
-                .ForSourceMember(s => s.Airroutes, s => s.Ignore());
-            Mapper.CreateMap<Airroute, AirrouteDto>()
-                .ForMember(d => d.FromAirport, d => d.MapFrom(s => s.Airports.ElementAt(0)))
-                .ForMember(d => d.ToAirport, d => d.MapFrom(s => s.Airports.ElementAt(1)));
+                .ForSourceMember(s => s.CreatedDate, s => s.Ignore())
+                .ForSourceMember(s => s.UpdatedDate, s => s.Ignore())
+                .Include<Airport, AirportDto>();
+            Mapper.CreateMap<Airport, AirportDto>();
         }
         public static T To<T>(this object source)
         {

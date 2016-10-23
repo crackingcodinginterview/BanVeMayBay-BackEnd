@@ -11,6 +11,5 @@ namespace BanVeMayBay.Contracts
     {
         void Save();
         GenericRepository<Airport> Airports { get; }
-        GenericRepository<Airroute> Airroutes { get; }
     }
 }

@@ -31,14 +31,13 @@ namespace BanVeMayBay.Repositories
             var res = this._dataSet.Add(model);
             return res;
         }
-        public void Delete(object id)
+        public void Delete(T model)
         {
-            T modelDelete = this._dataSet.Find(id);
-            if (this._dataContext.Entry(modelDelete).State == EntityState.Detached)
+            if (this._dataContext.Entry(model).State == EntityState.Detached)
             {
-                this._dataSet.Attach(modelDelete);
+                this._dataSet.Attach(model);
             }
-            this._dataSet.Remove(modelDelete);
+            this._dataSet.Remove(model);
         }
         public void Update(T model)
         {
