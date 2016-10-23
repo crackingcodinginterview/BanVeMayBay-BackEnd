@@ -10,5 +10,6 @@ namespace BanVeMayBay.DataTransferObjects
         public string IdentityCode { get; set; }
         public string Name { get; set; }
         public string Phone { get; set; }
+        public string ReservationticketId { get; set; }
     }
 }

@@ -140,8 +140,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Contracts\IUnitOfWork.cs" />
     <Compile Include="Controllers\AirportsController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\FlightsController.cs" />
-    <Compile Include="Controllers\TicketclassController.cs" />
+    <Compile Include="Controllers\ReservationticketsController.cs" />
+    <Compile Include="Controllers\TicketclasssController.cs" />
     <Compile Include="DataContexts\AirticketDataContext.cs" />
     <Compile Include="DataStores\AirticketDataStore.cs" />
     <Compile Include="DataTransferObjects\AirportDto.cs" />

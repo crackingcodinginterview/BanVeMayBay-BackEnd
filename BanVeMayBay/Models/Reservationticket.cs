@@ -10,6 +10,8 @@ namespace BanVeMayBay.Models
         public Reservationticket()
         {
             Status = 0;
+            NumSeatBook = 0;
+            BookDate = DateTime.Now;
         }
         public string Code { get; set; }
         public DateTime BookDate { get; set; }

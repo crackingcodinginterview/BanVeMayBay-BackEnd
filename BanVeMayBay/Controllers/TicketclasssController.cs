@@ -11,11 +11,11 @@ using System.Web.Http;
 
 namespace BanVeMayBay.Controllers
 {
-    public class TicketclassController : ApiController
+    public class TicketclasssController : ApiController
     {
         private GenericRepository<Ticketclass> _ticketclassServices;
         private AirticketDataStore _unitOfWork;
-        public TicketclassController()
+        public TicketclasssController()
         {
             this._unitOfWork = new AirticketDataStore();
             this._ticketclassServices = this._unitOfWork.Ticketclasss;
