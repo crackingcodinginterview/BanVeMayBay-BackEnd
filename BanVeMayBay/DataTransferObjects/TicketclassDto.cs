@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace BanVeMayBay.Models
+namespace BanVeMayBay.DataTransferObjects
 {
-    public class Airport : Base
+    public class TicketclassDto : BaseDto
     {
         public string Code { get; set; }
         public string Name { get; set; }
-        public virtual ICollection<Flight> Flights { get; set; }
     }
 }

@@ -138,13 +138,17 @@
   <ItemGroup>
     <Compile Include="App_Start\MapsConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Contracts\IAirportServices.cs" />
     <Compile Include="Contracts\IUnitOfWork.cs" />
     <Compile Include="Controllers\AirportsController.cs" />
+    <Compile Include="Controllers\FlightsController.cs" />
     <Compile Include="DataContexts\AirticketDataContext.cs" />
     <Compile Include="DataStores\AirticketDataStore.cs" />
     <Compile Include="DataTransferObjects\AirportDto.cs" />
     <Compile Include="DataTransferObjects\BaseDto.cs" />
+    <Compile Include="DataTransferObjects\CustomerDto.cs" />
+    <Compile Include="DataTransferObjects\FlightDto.cs" />
+    <Compile Include="DataTransferObjects\ReservationticketDto.cs" />
+    <Compile Include="DataTransferObjects\TicketclassDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -156,12 +160,19 @@
     <Compile Include="Migrations\201610230241392_Remove-Airroute.Designer.cs">
       <DependentUpon>201610230241392_Remove-Airroute.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610230736227_Add-New-Model.cs" />
+    <Compile Include="Migrations\201610230736227_Add-New-Model.Designer.cs">
+      <DependentUpon>201610230736227_Add-New-Model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Airport.cs" />
     <Compile Include="Models\Base.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Flight.cs" />
+    <Compile Include="Models\Reservationticket.cs" />
+    <Compile Include="Models\Ticketclass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
-    <Compile Include="Services\AirportServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -184,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610230241392_Remove-Airroute.resx">
       <DependentUpon>201610230241392_Remove-Airroute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610230736227_Add-New-Model.resx">
+      <DependentUpon>201610230736227_Add-New-Model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

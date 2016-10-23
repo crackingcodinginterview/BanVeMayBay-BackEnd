@@ -29,6 +29,7 @@ namespace BanVeMayBay.Repositories
         public T Insert(T model)
         {
             var res = this._dataSet.Add(model);
+            this._dataContext.SaveChanges();
             return res;
         }
         public void Delete(T model)
@@ -38,11 +39,14 @@ namespace BanVeMayBay.Repositories
                 this._dataSet.Attach(model);
             }
             this._dataSet.Remove(model);
+            this._dataContext.SaveChanges();
         }
-        public void Update(T model)
+        public T Update(T model)
         {
             this._dataSet.Attach(model);
             this._dataContext.Entry(model).State = EntityState.Modified;
+            this._dataContext.SaveChanges();
+            return model;
         }
     }
 }
