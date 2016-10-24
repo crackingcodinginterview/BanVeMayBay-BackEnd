@@ -43,13 +43,16 @@ namespace BanVeMayBay.Controllers
         {
             var customer = new Customer();
             var reservationticket = this._reservationServices.GetById(customerDto.ReservationticketId);
-            customer.IdentityCode = customerDto.IdentityCode;
-            customer.Name = customerDto.Name;
-            customer.Phone = customerDto.Phone;
-            customer.Reservationticket = reservationticket;
-            var res = this._customerServices.Insert(customer);
-            if (res != null)
-                return Ok(res.To<CustomerDto>());
+            if (reservationticket != null)
+            {
+                customer.IdentityCode = customerDto.IdentityCode;
+                customer.Name = customerDto.Name;
+                customer.Phone = customerDto.Phone;
+                customer.Reservationticket = reservationticket;
+                var res = this._customerServices.Insert(customer);
+                if (res != null)
+                    return Ok(res.To<CustomerDto>());
+            }
             return BadRequest();
         }
         [HttpPut]

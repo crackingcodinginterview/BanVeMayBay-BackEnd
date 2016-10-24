@@ -5,6 +5,7 @@ using BanVeMayBay.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -38,20 +39,40 @@ namespace BanVeMayBay.Controllers
                 return Ok(res.To<FlightDto>());
             return BadRequest();
         }
+        public static Expression<Func<Flight, bool>> IsBestFlight()
+        {
+            return p => true;
+        }
+        [HttpGet]
+        public IHttpActionResult FindBestFlight(string startAirportId, string endAirportId, DateTime startDate)
+        {
+            var res = this._flightServices.Get(f => true);
+            if(res != null)
+                return Ok(res.To<FlightDto>());
+            return BadRequest();
+            //var res = this._flightServices.Get(p => p.Airports.Skip(1).First() != null);
+            //if (res.Any())
+            //    return Ok(res.To<FlightDto>());
+            //return BadRequest();
+        }
         [HttpPost]
         public IHttpActionResult AddNewFlight([FromBody] FlightDto flightDto)
         {
             var flight = new Flight();
             var startAirport = this._airportServices.GetById(flightDto.StartAirport.Id);
             var endAirport = this._airportServices.GetById(flightDto.EndAirport.Id);
-            flight.Code = flightDto.Code;
-            flight.Airports = new List<Airport> { startAirport, endAirport };
-            flight.NumSeat1 = flightDto.NumSeat1;
-            flight.NumSeat2 = flightDto.NumSeat2;
-            flight.Time = flightDto.Time;
-            var res = this._flightServices.Insert(flight);
-            if (res != null)
-                return Ok(res.To<FlightDto>());
+            if (startAirport != null &&
+                endAirport != null)
+            {
+                flight.Code = flightDto.Code;
+                flight.Airports = new List<Airport> { startAirport, endAirport };
+                flight.NumSeat1 = flightDto.NumSeat1;
+                flight.NumSeat2 = flightDto.NumSeat2;
+                flight.Time = flightDto.Time;
+                var res = this._flightServices.Insert(flight);
+                if (res != null)
+                    return Ok(res.To<FlightDto>());
+            }
             return BadRequest();
         }
         [HttpPut]

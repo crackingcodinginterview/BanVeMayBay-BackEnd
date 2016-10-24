@@ -18,21 +18,29 @@ namespace BanVeMayBay.Repositories
             this._dataContext = dataContext;
             this._dataSet = this._dataContext.Set<T>();
         }
-        public IEnumerable<T> Get()
+        public virtual IEnumerable<T> Get()
         {
             return this._dataSet.ToList();
         }
-        public T GetById(object id)
+        public virtual IEnumerable<T> Get(Func<T, Boolean> where)
+        {
+            return this._dataSet.Where(where).ToList();
+        }
+        public virtual T GetById(object id)
         {
             return this._dataSet.Find(id);
         }
-        public T Insert(T model)
+        public virtual T GetOne(Func<T, Boolean> where)
+        {
+            return this._dataSet.Where(where).FirstOrDefault<T>();
+        }
+        public virtual T Insert(T model)
         {
             var res = this._dataSet.Add(model);
             this._dataContext.SaveChanges();
             return res;
         }
-        public void Delete(T model)
+        public virtual void Delete(T model)
         {
             if (this._dataContext.Entry(model).State == EntityState.Detached)
             {
@@ -41,7 +49,7 @@ namespace BanVeMayBay.Repositories
             this._dataSet.Remove(model);
             this._dataContext.SaveChanges();
         }
-        public T Update(T model)
+        public virtual T Update(T model)
         {
             this._dataSet.Attach(model);
             this._dataContext.Entry(model).State = EntityState.Modified;

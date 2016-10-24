@@ -44,12 +44,15 @@ namespace BanVeMayBay.Controllers
             var reservationticket = new Reservationticket();
             var ticketclass = reservationticketDto.Ticketclass;
             var flight = this._flightServices.GetById(reservationticketDto.Flight.Id);
-            reservationticket.Code = reservationticketDto.Code;
-            reservationticket.Ticketclass = ticketclass;
-            reservationticket.Flight = flight;
-            var res = this._reservationticketServices.Insert(reservationticket);
-            if (res != null)
-                return Ok(res.To<ReservationticketDto>());
+            if (flight != null)
+            {
+                reservationticket.Code = reservationticketDto.Code;
+                reservationticket.Ticketclass = ticketclass;
+                reservationticket.Flight = flight;
+                var res = this._reservationticketServices.Insert(reservationticket);
+                if (res != null)
+                    return Ok(res.To<ReservationticketDto>());
+            }
             return BadRequest();
         }
         [HttpPut]
