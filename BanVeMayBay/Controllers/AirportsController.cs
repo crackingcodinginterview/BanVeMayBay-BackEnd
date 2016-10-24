@@ -12,6 +12,7 @@ using System.Web.Http;
 
 namespace BanVeMayBay.Controllers
 {
+    [RoutePrefix("api/airports")]
     public class AirportsController : ApiController
     {
         private GenericRepository<Airport> _airportServices;
