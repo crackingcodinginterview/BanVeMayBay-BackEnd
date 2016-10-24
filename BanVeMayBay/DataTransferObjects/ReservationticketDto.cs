@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BanVeMayBay.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,6 @@ namespace BanVeMayBay.DataTransferObjects
         public int Status { get; set; }
         public CustomerDto Customer { get; set; }
         public FlightDto Flight { get; set; }
-        public TicketclassDto Ticketclass { get; set; }
+        public Ticketclass Ticketclass { get; set; }
     }
 }

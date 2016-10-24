@@ -50,9 +50,10 @@ C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMa
 C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.Migrations.Init.resources
 C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.GenerateResource.Cache
 C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.Migrations.RemoveAirroute.resources
-C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.Migrations.AddNewModel.resources
 C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\bin\Swashbuckle.Core.dll
 C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\bin\WebActivatorEx.dll
 C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\bin\BanVeMayBay.XML
+C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.Migrations.test.resources

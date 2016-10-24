@@ -14,14 +14,12 @@ namespace BanVeMayBay.Controllers
     public class ReservationticketsController : ApiController
     {
         private GenericRepository<Reservationticket> _reservationticketServices;
-        private GenericRepository<Ticketclass> _ticketclassServices;
         private GenericRepository<Flight> _flightServices;
         private AirticketDataStore _unitOfWork;
         public ReservationticketsController()
         {
             this._unitOfWork = new AirticketDataStore();
             this._reservationticketServices = this._unitOfWork.Reservationtickets;
-            this._ticketclassServices = this._unitOfWork.Ticketclasss;
             this._flightServices = this._unitOfWork.Flights;
         }
         [HttpGet]
@@ -44,7 +42,7 @@ namespace BanVeMayBay.Controllers
         public IHttpActionResult AddNewReservationticket([FromBody] ReservationticketDto reservationticketDto)
         {
             var reservationticket = new Reservationticket();
-            var ticketclass = this._ticketclassServices.GetById(reservationticketDto.Ticketclass.Id);
+            var ticketclass = reservationticketDto.Ticketclass;
             var flight = this._flightServices.GetById(reservationticketDto.Flight.Id);
             reservationticket.Code = reservationticketDto.Code;
             reservationticket.Ticketclass = ticketclass;
