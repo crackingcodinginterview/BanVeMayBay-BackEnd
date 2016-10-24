@@ -47,7 +47,7 @@ namespace BanVeMayBay.Controllers
         public IHttpActionResult FindBestFlight(string startAirportId, string endAirportId, DateTime startDate)
         {
             var res = this._flightServices.Get(f => true);
-            if(res != null)
+            if(res.Any())
                 return Ok(res.To<FlightDto>());
             return BadRequest();
             //var res = this._flightServices.Get(p => p.Airports.Skip(1).First() != null);
