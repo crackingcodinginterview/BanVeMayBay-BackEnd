@@ -1,5 +1,6 @@
 ﻿using BanVeMayBay.DataStores;
 using BanVeMayBay.DataTransferObjects;
+using BanVeMayBay.Enums;
 using BanVeMayBay.Models;
 using BanVeMayBay.Repositories;
 using System;
@@ -23,7 +24,10 @@ namespace BanVeMayBay.Controllers
             this._flightServices = this._unitOfWork.Flights;
         }
         [HttpGet]
-        public IHttpActionResult GetAllReservationticketclass()
+        public IHttpActionResult FindBestTicket(string startAirport,
+            string endAirport, DateTime startDate, 
+            Ticketclass ticketclass = Ticketclass.Common, int numSeat = 1,
+            int price = 10000000)
         {
             var res = this._reservationticketServices.Get();
             if (res.Any())
@@ -31,23 +35,24 @@ namespace BanVeMayBay.Controllers
             return BadRequest();
         }
         [HttpGet]
-        public IHttpActionResult GetReservationticketById(string id)
+        public IHttpActionResult GetAllReservationticketclass()
         {
-            var res = this._reservationticketServices.GetById(id);
-            if (res != null)
+            var res = this._reservationticketServices.Get();
+            if (res.Any())
                 return Ok(res.To<ReservationticketDto>());
             return BadRequest();
         }
         [HttpPost]
         public IHttpActionResult AddNewReservationticket([FromBody] ReservationticketDto reservationticketDto)
         {
-            var reservationticket = new Reservationticket();
-            var ticketclass = reservationticketDto.Ticketclass;
+            if (!ModelState.IsValid)
+                return BadRequest();
             var flight = this._flightServices.GetById(reservationticketDto.Flight.Id);
             if (flight != null)
             {
+                var reservationticket = new Reservationticket();
                 reservationticket.Code = reservationticketDto.Code;
-                reservationticket.Ticketclass = ticketclass;
+                reservationticket.Ticketclass = reservationticketDto.Ticketclass;
                 reservationticket.Flight = flight;
                 var res = this._reservationticketServices.Insert(reservationticket);
                 if (res != null)
@@ -58,6 +63,8 @@ namespace BanVeMayBay.Controllers
         [HttpPut]
         public IHttpActionResult EditReservationticket(string id, [FromBody] ReservationticketDto reservationticketDto)
         {
+            if (!ModelState.IsValid)
+                return BadRequest();
             var reservationticket = this._reservationticketServices.GetById(id);
             if (reservationticket != null)
             {

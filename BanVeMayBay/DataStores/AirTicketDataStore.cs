@@ -18,6 +18,7 @@ namespace BanVeMayBay.DataStores
         private GenericRepository<Flight> _flights;
         private GenericRepository<Reservationticket> _reservationtickets;
         private GenericRepository<Customer> _customers;
+        private GenericRepository<Flightticket> _flighttickets;
         public AirticketDataStore()
         {
             this._dataContext = new AirticketDataContext();
@@ -67,6 +68,18 @@ namespace BanVeMayBay.DataStores
                     this._customers = new GenericRepository<Customer>(this._dataContext);
                 }
                 return this._customers;
+            }
+        }
+
+        public GenericRepository<Flightticket> Flighttickets
+        {
+            get
+            {
+                if (this._flighttickets == null)
+                {
+                    this._flighttickets = new GenericRepository<Flightticket>(this._dataContext);
+                }
+                return this._flighttickets;
             }
         }
 

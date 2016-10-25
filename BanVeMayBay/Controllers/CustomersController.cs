@@ -41,10 +41,12 @@ namespace BanVeMayBay.Controllers
         [HttpPost]
         public IHttpActionResult AddNewCustomer([FromBody] CustomerDto customerDto)
         {
-            var customer = new Customer();
+            if (!ModelState.IsValid)
+                return BadRequest();
             var reservationticket = this._reservationServices.GetById(customerDto.ReservationticketId);
             if (reservationticket != null)
             {
+                var customer = new Customer();
                 customer.IdentityCode = customerDto.IdentityCode;
                 customer.Name = customerDto.Name;
                 customer.Phone = customerDto.Phone;
@@ -58,6 +60,8 @@ namespace BanVeMayBay.Controllers
         [HttpPut]
         public IHttpActionResult EditCustomer(string id, [FromBody] CustomerDto customerDto)
         {
+            if (!ModelState.IsValid)
+                return BadRequest();
             var customer = this._customerServices.GetById(id);
             if (customer != null)
             {

@@ -156,6 +156,7 @@
     <Compile Include="Controllers\AirportsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\FlightsController.cs" />
+    <Compile Include="Controllers\FlightticketsController.cs" />
     <Compile Include="Controllers\ReservationticketsController.cs" />
     <Compile Include="DataContexts\AirticketDataContext.cs" />
     <Compile Include="DataStores\AirticketDataStore.cs" />
@@ -163,6 +164,7 @@
     <Compile Include="DataTransferObjects\BaseDto.cs" />
     <Compile Include="DataTransferObjects\CustomerDto.cs" />
     <Compile Include="DataTransferObjects\FlightDto.cs" />
+    <Compile Include="DataTransferObjects\FlightticketDto.cs" />
     <Compile Include="DataTransferObjects\ReservationticketDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -183,12 +185,21 @@
     <Compile Include="Migrations\201610241219125_test.Designer.cs">
       <DependentUpon>201610241219125_test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610241416183_Change-Reservationticket-Model.cs" />
+    <Compile Include="Migrations\201610241416183_Change-Reservationticket-Model.Designer.cs">
+      <DependentUpon>201610241416183_Change-Reservationticket-Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610241800438_Add-Flight-Ticket-Model.cs" />
+    <Compile Include="Migrations\201610241800438_Add-Flight-Ticket-Model.Designer.cs">
+      <DependentUpon>201610241800438_Add-Flight-Ticket-Model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Airport.cs" />
     <Compile Include="Models\Base.cs" />
     <Compile Include="Enums\BookStatus.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Flight.cs" />
+    <Compile Include="Models\Flightticket.cs" />
     <Compile Include="Models\Reservationticket.cs" />
     <Compile Include="Enums\Ticketclass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -221,6 +232,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610241219125_test.resx">
       <DependentUpon>201610241219125_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610241416183_Change-Reservationticket-Model.resx">
+      <DependentUpon>201610241416183_Change-Reservationticket-Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610241800438_Add-Flight-Ticket-Model.resx">
+      <DependentUpon>201610241800438_Add-Flight-Ticket-Model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

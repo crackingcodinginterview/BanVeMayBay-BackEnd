@@ -14,5 +14,6 @@ namespace BanVeMayBay.Contracts
         GenericRepository<Flight> Flights { get; }
         GenericRepository<Reservationticket> Reservationtickets { get; }
         GenericRepository<Customer> Customers { get; }
+        GenericRepository<Flightticket> Flighttickets { get; }
     }
 }

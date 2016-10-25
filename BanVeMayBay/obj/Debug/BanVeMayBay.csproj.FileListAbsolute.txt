@@ -57,3 +57,5 @@ C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMa
 C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\bin\BanVeMayBay.XML
 C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.Migrations.test.resources
+C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.Migrations.ChangeReservationticketModel.resources
+C:\Users\Administrator\documents\visual studio 2015\Projects\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.Migrations.AddFlightTicketModel.resources

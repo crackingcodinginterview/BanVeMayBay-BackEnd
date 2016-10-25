@@ -14,5 +14,6 @@ namespace BanVeMayBay.Models
         public string Phone { get; set; }
         [Required]
         public virtual Reservationticket Reservationticket { get; set; }
+        public virtual Flightticket Flightticket { get; set; }
     }
 }

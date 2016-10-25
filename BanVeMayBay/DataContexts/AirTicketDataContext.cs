@@ -17,5 +17,6 @@ namespace BanVeMayBay.DataContexts
         public DbSet<Flight> Flight { get; set; }
         public DbSet<Customer> Customer { get; set; }
         public DbSet<Reservationticket> Reservationticket { get; set; }
+        public DbSet<Flightticket> Flightticket { get; set; }
     }
 }

@@ -39,31 +39,17 @@ namespace BanVeMayBay.Controllers
                 return Ok(res.To<FlightDto>());
             return BadRequest();
         }
-        public static Expression<Func<Flight, bool>> IsBestFlight()
-        {
-            return p => true;
-        }
-        [HttpGet]
-        public IHttpActionResult FindBestFlight(string startAirportId, string endAirportId, DateTime startDate)
-        {
-            var res = this._flightServices.Get(f => true);
-            if(res.Any())
-                return Ok(res.To<FlightDto>());
-            return BadRequest();
-            //var res = this._flightServices.Get(p => p.Airports.Skip(1).First() != null);
-            //if (res.Any())
-            //    return Ok(res.To<FlightDto>());
-            //return BadRequest();
-        }
         [HttpPost]
         public IHttpActionResult AddNewFlight([FromBody] FlightDto flightDto)
         {
-            var flight = new Flight();
+            if (!ModelState.IsValid)
+                return BadRequest();
             var startAirport = this._airportServices.GetById(flightDto.StartAirport.Id);
             var endAirport = this._airportServices.GetById(flightDto.EndAirport.Id);
             if (startAirport != null &&
                 endAirport != null)
             {
+                var flight = new Flight();
                 flight.Code = flightDto.Code;
                 flight.Airports = new List<Airport> { startAirport, endAirport };
                 flight.NumSeat1 = flightDto.NumSeat1;
@@ -78,6 +64,8 @@ namespace BanVeMayBay.Controllers
         [HttpPut]
         public IHttpActionResult EditFlight(string id, [FromBody] AirportDto airportDto)
         {
+            if (!ModelState.IsValid)
+                return BadRequest();
             var flight = this._flightServices.GetById(id);
             if (flight != null)
             {

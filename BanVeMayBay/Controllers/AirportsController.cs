@@ -41,6 +41,8 @@ namespace BanVeMayBay.Controllers
         [HttpPost]
         public IHttpActionResult AddNewAirport([FromBody] AirportDto airportDto)
         {
+            if (!ModelState.IsValid)
+                return BadRequest();
             var airport = new Airport();
             airport.Code = airportDto.Code;
             airport.Name = airportDto.Name;
@@ -52,6 +54,8 @@ namespace BanVeMayBay.Controllers
         [HttpPut]
         public IHttpActionResult EditAirport(string id, [FromBody] AirportDto airportDto)
         {
+            if (!ModelState.IsValid)
+                return BadRequest();
             var airport = this._airportServices.GetById(id);
             if(airport != null)
             {

@@ -17,6 +17,7 @@ namespace BanVeMayBay
                 .ForSourceMember(s => s.UpdatedDate, s => s.Ignore())
                 .Include<Airport, AirportDto>()
                 .Include<Flight, FlightDto>()
+                .Include<Flightticket, FlightticketDto>()
                 .Include<Reservationticket, ReservationticketDto>()
                 .Include<Customer, CustomerDto>();
             Mapper.CreateMap<Airport, AirportDto>()
@@ -30,6 +31,8 @@ namespace BanVeMayBay
                 .ForMember(d => d.StartAirport, d => d.MapFrom(s => s.Airports.ElementAt(0)))
                 .ForMember(d => d.EndAirport, d => d.MapFrom(s => s.Airports.ElementAt(1)));
             Mapper.CreateMap<Reservationticket, ReservationticketDto>();
+            Mapper.CreateMap<Flightticket, FlightticketDto>()
+                .ForSourceMember(s => s.Customers, s => s.Ignore());
         }
         public static T To<T>(this object source)
         {

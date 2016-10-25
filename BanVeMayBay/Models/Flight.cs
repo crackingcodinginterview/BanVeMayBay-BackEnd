@@ -16,5 +16,6 @@ namespace BanVeMayBay.Models
         public int NumSeat2 { get; set; }
         public virtual ICollection<Airport> Airports { get; set; }
         public virtual ICollection<Reservationticket> Reservationtickets { get; set; }
+        public virtual ICollection<Flightticket> Flighttickets { get; set; }
     }
 }
