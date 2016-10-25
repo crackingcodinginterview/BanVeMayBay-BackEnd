@@ -78,7 +78,7 @@ namespace BanVeMayBay.Controllers
 
                 reservationticket.Customer = customer;
                 reservationticket.Flight = flight;
-                reservationticket.NumSeatBook = reservationticket.NumSeatBook;
+                reservationticket.NumSeatBook = reservationticketDto.NumSeatBook;
                 reservationticket.Status = reservationticketDto.Status;
                 var res = this._reservationticketServices.Update(reservationticket);
                 if (res != null)
