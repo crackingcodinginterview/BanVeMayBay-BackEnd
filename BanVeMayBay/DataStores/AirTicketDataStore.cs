@@ -91,7 +91,7 @@ namespace BanVeMayBay.DataStores
             }
             catch (DbEntityValidationException e)
             {
-
+                throw e;
             }
         }
     }

@@ -62,13 +62,17 @@ namespace BanVeMayBay.Controllers
             return BadRequest();
         }
         [HttpPut]
-        public IHttpActionResult EditFlight(string id, [FromBody] AirportDto airportDto)
+        public IHttpActionResult EditFlight(string id, [FromBody] FlightDto flightDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
             var flight = this._flightServices.GetById(id);
             if (flight != null)
             {
+                flight.Code = flightDto.Code;
+                flight.NumSeat1 = flightDto.NumSeat1;
+                flight.NumSeat2 = flightDto.NumSeat2;
+                flight.Time = flightDto.Time;
                 var res = this._flightServices.Update(flight);
                 if (res != null)
                     return Ok(res.To<FlightDto>());

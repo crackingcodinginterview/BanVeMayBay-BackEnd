@@ -59,6 +59,7 @@ namespace BanVeMayBay.Controllers
             var airport = this._airportServices.GetById(id);
             if(airport != null)
             {
+                airport.Name = airportDto.Name;
                 var res = this._airportServices.Update(airport);
                 if (res != null)
                     return Ok(res.To<AirportDto>());

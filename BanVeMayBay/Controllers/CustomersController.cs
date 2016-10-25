@@ -65,6 +65,9 @@ namespace BanVeMayBay.Controllers
             var customer = this._customerServices.GetById(id);
             if (customer != null)
             {
+                customer.IdentityCode = customerDto.IdentityCode;
+                customer.Name = customerDto.Name;
+                customer.Phone = customerDto.Phone;
                 var res = this._customerServices.Update(customer);
                 if (res != null)
                     return Ok(res.To<CustomerDto>());

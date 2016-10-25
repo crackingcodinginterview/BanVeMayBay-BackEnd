@@ -66,6 +66,9 @@ namespace BanVeMayBay.Controllers
             var flightticket = this._flightticketServices.GetById(id);
             if (flightticket != null)
             {
+                flightticket.Code = flightticketDto.Code;
+                flightticket.Price = flightticketDto.Price;
+                flightticket.Ticketclass = flightticketDto.Ticketclass;
                 var res = this._flightticketServices.Update(flightticket);
                 if (res != null)
                     return Ok(res.To<FlightticketDto>());

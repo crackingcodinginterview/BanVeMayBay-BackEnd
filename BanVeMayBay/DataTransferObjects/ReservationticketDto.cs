@@ -9,7 +9,6 @@ namespace BanVeMayBay.DataTransferObjects
     public class ReservationticketDto : BaseDto
     {
         public string Code { get; set; }
-        public int Price { get; set; }
         public DateTime BookDate { get; set; }
         public int NumSeatBook { get; set; }
         public BookStatus Status { get; set; }

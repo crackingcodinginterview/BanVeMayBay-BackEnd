@@ -24,13 +24,14 @@ namespace BanVeMayBay.Controllers
             this._flightServices = this._unitOfWork.Flights;
         }
         [HttpGet]
-        public IHttpActionResult FindBestTicket(string startAirport,
-            string endAirport, DateTime startDate, 
-            Ticketclass ticketclass = Ticketclass.Common, int numSeat = 1,
-            int price = 10000000)
+        public IHttpActionResult GetReservationticketclassById(string id)
         {
-            var res = this._reservationticketServices.Get();
-            if (res.Any())
+            Reservationticket res = null;
+            if (id.Length > 6)
+                res = this._reservationticketServices.GetById(id);
+            else
+                res = this._reservationticketServices.GetOne(r => r.Code == id);
+            if (res != null)
                 return Ok(res.To<ReservationticketDto>());
             return BadRequest();
         }
@@ -66,8 +67,19 @@ namespace BanVeMayBay.Controllers
             if (!ModelState.IsValid)
                 return BadRequest();
             var reservationticket = this._reservationticketServices.GetById(id);
-            if (reservationticket != null)
+            var flight = this._flightServices.GetById(reservationticketDto.Flight.Id);
+            if (reservationticket != null
+                && flight != null)
             {
+                var customer = new Customer();
+                customer.IdentityCode = reservationticketDto.Customer.IdentityCode;
+                customer.Name = reservationticketDto.Customer.Name;
+                customer.Phone = reservationticketDto.Customer.Phone;
+
+                reservationticket.Customer = customer;
+                reservationticket.Flight = flight;
+                reservationticket.NumSeatBook = reservationticket.NumSeatBook;
+                reservationticket.Status = reservationticketDto.Status;
                 var res = this._reservationticketServices.Update(reservationticket);
                 if (res != null)
                     return Ok(res.To<ReservationticketDto>());
