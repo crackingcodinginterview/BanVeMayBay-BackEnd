@@ -30,7 +30,7 @@ namespace BanVeMayBay.Controllers
             if (id.Length > 6)
                 res = this._reservationticketServices.GetById(id);
             else
-                res = this._reservationticketServices.GetOne(r => r.Code == id);
+                res = this._reservationticketServices.GetOneWithCondition(r => r.Code == id);
             if (res != null)
                 return Ok(res.To<ReservationticketDto>());
             return BadRequest();

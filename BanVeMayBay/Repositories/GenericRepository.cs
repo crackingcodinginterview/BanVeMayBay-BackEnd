@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Web;
 
 namespace BanVeMayBay.Repositories
@@ -22,15 +23,20 @@ namespace BanVeMayBay.Repositories
         {
             return this._dataSet.ToList();
         }
-        public virtual IEnumerable<T> Get(Func<T, Boolean> where)
+        public virtual IEnumerable<T> GetAllWithCondition(Expression<Func<T, bool>> predicate, params string[] navigationProperties)
         {
-            return this._dataSet.Where(where).ToList();
+            List<T> list;
+            var query = this._dataSet.AsQueryable();
+            foreach (string navigationProperty in navigationProperties)
+                query = query.Include(navigationProperty);//got to reaffect it.
+            list = query.Where(predicate).ToList<T>();
+            return list;
         }
         public virtual T GetById(object id)
         {
             return this._dataSet.Find(id);
         }
-        public virtual T GetOne(Func<T, Boolean> where)
+        public virtual T GetOneWithCondition(Func<T, Boolean> where)
         {
             return this._dataSet.Where(where).FirstOrDefault<T>();
         }

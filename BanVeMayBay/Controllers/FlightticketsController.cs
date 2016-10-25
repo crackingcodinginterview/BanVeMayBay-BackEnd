@@ -1,5 +1,6 @@
 ﻿using BanVeMayBay.DataStores;
 using BanVeMayBay.DataTransferObjects;
+using BanVeMayBay.Enums;
 using BanVeMayBay.Models;
 using BanVeMayBay.Repositories;
 using System;
@@ -35,6 +36,25 @@ namespace BanVeMayBay.Controllers
         {
             var res = this._flightticketServices.GetById(id);
             if (res != null)
+                return Ok(res.To<FlightticketDto>());
+            return BadRequest();
+        }
+        [HttpGet]
+        public IHttpActionResult GetBestTicket(
+            string fromAirportId, string toAirportId,
+            DateTime startDate,
+            Ticketclass ticketclass = Ticketclass.Common,
+            int numSeat = 1
+            )
+       {
+            var res = this._flightticketServices.Get()
+                .AsQueryable().Where(
+                e => 
+                e.Flight.Airports.ElementAt(0).Id == fromAirportId
+                && e.Flight.Airports.ElementAt(1).Id == toAirportId
+                && (e.Ticketclass == ticketclass && e.NumSeatAvailable >= numSeat)
+                && e.Flight.Time >= startDate);
+            if(res.Any())
                 return Ok(res.To<FlightticketDto>());
             return BadRequest();
         }
