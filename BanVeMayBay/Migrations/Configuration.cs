@@ -1,5 +1,7 @@
 ﻿namespace BanVeMayBay.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
     using System;
     using System.Collections.Generic;
@@ -38,6 +40,18 @@
             //context.Airport.Add(airport2);
             //context.Airport.Add(airport3);
             //context.Airport.Add(airport4);
+
+            context.Users.AddOrUpdate(
+                user => user.UserName,
+                new User()
+                {
+                    UserName = "vominhquoc",
+                    Id = Guid.NewGuid().ToString("N"),
+                    PasswordHash = new PasswordHasher().HashPassword("user123456"),
+                    SecurityStamp = Guid.NewGuid().ToString(),
+                    Email = "tugberk@example.com",
+                    EmailConfirmed = true
+                });
         }
     }
 }

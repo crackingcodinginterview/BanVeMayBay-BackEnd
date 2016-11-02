@@ -39,6 +39,7 @@ namespace BanVeMayBay.Controllers
                 return Ok(res.To<FlightDto>());
             return BadRequest();
         }
+        [Authorize]
         [HttpPost]
         public IHttpActionResult AddNewFlight([FromBody] FlightDto flightDto)
         {
@@ -61,6 +62,7 @@ namespace BanVeMayBay.Controllers
             }
             return BadRequest();
         }
+        [Authorize]
         [HttpPut]
         public IHttpActionResult EditFlight(string id, [FromBody] FlightDto flightDto)
         {
@@ -79,6 +81,7 @@ namespace BanVeMayBay.Controllers
             }
             return BadRequest();
         }
+        [Authorize]
         [HttpDelete]
         public IHttpActionResult RemoveFlight(string id)
         {
