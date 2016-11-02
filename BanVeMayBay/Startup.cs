@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
+using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using System;
@@ -17,6 +18,7 @@ namespace BanVeMayBay
     {
         public void Configuration(IAppBuilder app)
         {
+            app.UseCors(CorsOptions.AllowAll);
             app.CreatePerOwinContext<AirticketDataContext>(() => new AirticketDataContext());
             app.CreatePerOwinContext<UserManager<IdentityUser>>(CreateManager);
 
