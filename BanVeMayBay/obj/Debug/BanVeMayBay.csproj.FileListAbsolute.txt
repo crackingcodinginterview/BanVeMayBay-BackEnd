@@ -138,3 +138,5 @@ C:\Users\Administrator\Desktop\1312467_1312568_10\Source\Server\BanVeMayBay\obj\
 C:\Users\Administrator\Desktop\1312467_1312568_10\Source\Server\BanVeMayBay\obj\Debug\BanVeMayBay.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\1312467_1312568_10\Source\Server\BanVeMayBay\bin\Microsoft.Owin.Host.SystemWeb.dll
 C:\Users\Administrator\Desktop\1312467_1312568_10\Source\Server\BanVeMayBay\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Administrator\Desktop\1312467_1312568_10\Source\Server\BanVeMayBay\bin\Microsoft.Owin.Cors.dll
+C:\Users\Administrator\Desktop\1312467_1312568_10\Source\Server\BanVeMayBay\bin\Microsoft.Owin.Cors.xml
